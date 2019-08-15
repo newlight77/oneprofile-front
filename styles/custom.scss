@@ -1,0 +1,24 @@
+.title {
+    background-color: rgba(31, 30, 114, 0.1);
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+}
+.title-1 {
+    background-color: rgba(255, 104, 93, 0.829);
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+}
+.title-2 {
+    background-color: rgba(1, 213, 250, 0.829);
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+}
+
+#footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: 2em;
+    border-top: 1px solid rgba(163, 147, 130, .1);
+    border-bottom: 1px solid rgba(163, 147, 130, .1);
+}
