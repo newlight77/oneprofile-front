@@ -45,6 +45,31 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 Alternatively, we can create a separate NgModule that imports and then re-exports all of the Angular Material components that you will use in our application. By exporting them again, other modules can simply include your CustomMaterialModule wherever Material components are needed, and automatically get all of the exported Material modules. A good place for importing/exporting the application-wide Material modules is the SharedModule. Here is an example of that [MAteridalModule class](https://github.com/angular/components/blob/master/src/material-examples/material-module.ts).
 
+### Import all Material Module
+
+We need to import the MaterialModule class in whichever module compoents requires Material components. For example, we can import that MaterialModule class in the AppModule class, if there is an imported component used Material. __Here there is no need__.
+
+Example :
+
+```ts
+...
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
+
+@NgModule({
+...
+  imports: [
+...
+    BrowserAnimationsModule,
+    MaterialModule,
+...
+})
+export class AppModule { }
+
+```
+
+That way, we can any Material component.
+
 ### Themes
 
 At last, we can include a theme. Including a theme is required to apply all of the core and theme styles to your application. Themes are required to add styles to the Material components used in our application. We can either use a custom or a pre-built theme.
@@ -89,3 +114,59 @@ If you want to use the mat-icon component with the official Material Design Icon
 For more information on using Material Icons, check out the [Material Icons Guide](https://google.github.io/material-design-icons/).
 
 Note that mat-icon supports any font or svg icons; using Material Icons is one of many options.
+
+### Using Material in Login page
+
+As we are going to use Material components in the Login component, included int he CoreModule, we are going to import in the CoreModule.
+
+```ts
+...
+import { MaterialModule } from './shared/material.module';
+
+@NgModule({
+...
+  imports: [
+...
+    MaterialModule,
+...
+})
+export class CoreModule { }
+
+```
+
+Then edit login.component.html :
+
+```html
+<mat-card>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Username"  />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" />
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary">Signin</button>
+</mat-card>
+```
+
+And edit also the LoginComponent class :
+
+```ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+  }
+
+}
+```
