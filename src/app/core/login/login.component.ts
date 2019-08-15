@@ -10,8 +10,11 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb = new FormBuilder()) {
-    this.loginForm = fb.group({
+  // no DI ny constructor : there is an issue with it. Else, or test ko or ng serve ko.
+  private fb = new FormBuilder();
+
+  constructor() {
+    this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
