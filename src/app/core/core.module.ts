@@ -8,10 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, ErrorNotFoundComponent, HeaderComponent, FooterComponent],
+  declarations: [LoginComponent, ErrorNotFoundComponent, HeaderComponent, FooterComponent, NavigationComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
   ],
   exports: [
-    HeaderComponent, FooterComponent
+    HeaderComponent, FooterComponent, NavigationComponent
   ]
 })
 export class CoreModule { }
