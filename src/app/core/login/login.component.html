@@ -1,10 +1,22 @@
 <mat-card>
+    <form [formGroup]="loginForm">
+
         <mat-form-field>
-        <input matInput type="email" placeholder="Username" />
+        <input matInput type="email" placeholder="Username" formControlName="email" />
         </mat-form-field>
         <mat-form-field>
-        <input matInput type="password" placeholder="Password" />
+        <input matInput type="password" placeholder="Password" formControlName="password" />
         </mat-form-field>
-        <br />
-        <button mat-raised-button color="primary" >Signin</button>
+        <br/>
+
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid" (ngSubmit)="signin()">Signin</button>
+        <br/>
+
+        <p><label mat-label>Email: {{ loginForm.get('email').value }}</label></p>
+        <p><label mat-label>Form Status: {{ loginForm.status}}</label></p>
+        <button mat-raised-button color="primary" (click)="defaultEmail()">Default Email</button>
+
+    </form>
+    
 </mat-card>
+

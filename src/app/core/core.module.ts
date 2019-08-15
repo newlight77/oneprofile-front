@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
@@ -15,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     RouterModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent, FooterComponent
