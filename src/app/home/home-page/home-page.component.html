@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row" fxLayoutAlign="start start">
+    <div class="row">
         <!-- left panel -->
         <div class="col-12 col-xl-3">
             <mat-card class="panel-card" [style.minHeight]="'105%'" [style.minWidth]="'105%'">
@@ -9,10 +9,29 @@
                 </mat-card-title>
                 <mat-divider></mat-divider>
                 <mat-card-content class="panel-news-content">
-                    <img src="https://s.gravatar.com/avatar/2ab8133286eff8a9fb7cd77876135d2f?s=80" height="36%" width="36%">
-                    <span>Built by Kong To</span>
-                    <div #newsContainer class="callout left"></div>
+                        <div class="portrait">
+                            <img src="https://s.gravatar.com/avatar/2ab8133286eff8a9fb7cd77876135d2f?s=80" height="50%" width="50%">
+                            <div>
+                                <span><i>by</i><b> Kong To</b></span>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <a href="https://twitter.com/newlight77">
+                                <img src="{{icons.twitter.color_base64_24px}}" alt="Kong To @ twitter">
+                            </a>
+                            <a href="https://github.com/newlight77">
+                                <img src="{{icons.github.color_base64_24px}}" alt="Kong To @ github">
+                            </a>
+                            <a href="https://linkedin.com/kongto">
+                                <img src="{{icons.linkedin.color_base64_24px}}" alt="Kong To @ linkedin">
+                            </a>
+                            <a href="newlight77@gmail.com">
+                                <img src="{{icons.email.color_base64_24px}}" alt="Email">
+                            </a>
+                        </div>
+                    <div #newsContainer ></div>
                 </mat-card-content>
+
             </mat-card>
         </div>
 

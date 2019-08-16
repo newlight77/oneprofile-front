@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Event, UPCOMING_EVENTS } from '../home.model';
+import { ICONS } from '../../shared/icons.model';
 
 @Component({
   selector: 'app-home-page',
@@ -8,6 +9,7 @@ import { Event, UPCOMING_EVENTS } from '../home.model';
 })
 export class HomePageComponent implements OnInit {
 
+  icons = ICONS;
   events = UPCOMING_EVENTS;
 
   constructor() { }
