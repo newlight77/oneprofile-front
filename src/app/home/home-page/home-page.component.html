@@ -1,29 +1,78 @@
 <div class="container">
-    <div class="nav-container">
-        <nav mat-tab-nav-bar>
-            <a mat-tab-link routerLink="landing" routerLinkActive>
-                <mat-icon aria-label="Menu" class="material-icons">home</mat-icon>
-                <span class="flex-spacer"></span>
-                Welcome
-            </a>
-            <a mat-tab-link routerLink="events" routerLinkActive>
-                <mat-icon aria-label="Menu" class="material-icons">event</mat-icon>
-                <span class="flex-spacer"></span>
-                Events
-            </a>
-            <a mat-tab-link routerLink="community" routerLinkActive>
-                <mat-icon aria-label="Menu" class="material-icons">groupe</mat-icon>
-                <span class="flex-spacer"></span>
-                Community
-            </a>
-            <!-- we don't need this to be dynamic yet -->
-            <!-- <a mat-tab-link *ngFor="let tab of homeMenu" [routerLink]="tab.id" routerLinkActive #rla="routerLinkActive" [active]="rla.active">
-                <mat-icon aria-label="Menu" class="material-icons">{{tab.icon}}</mat-icon>
-                <span class="flex-spacer"></span>
-                {{tab.title}}
-            </a> -->
-        </nav>
 
-        <router-outlet></router-outlet>
+    <div class="row" fxLayoutAlign="start start">
+        <!-- left panel -->
+        <div class="col-12 col-xl-3">
+            <mat-card class="panel-card" [style.minHeight]="'110%'" [style.minWidth]="'105%'">
+                <mat-card-title>
+                    <div class="panel-news-title">About</div>
+                </mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content class="panel-news-content">
+                    <img src="https://s.gravatar.com/avatar/2ab8133286eff8a9fb7cd77876135d2f?s=80" height="36%" width="36%">
+                    <span>Built by Kong To</span>
+                    <div #newsContainer class="callout left"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <!-- content panel -->
+        <div class="col-12 col-xl-6">
+            <div class="nav-container">
+                <nav mat-tab-nav-bar>
+                    <a mat-tab-link routerLink="landing" routerLinkActive>
+                        <mat-icon aria-label="Menu" class="material-icons">home</mat-icon>
+                        <span class="flex-spacer"></span>
+                        Welcome
+                    </a>
+                    <a mat-tab-link routerLink="events" routerLinkActive>
+                        <mat-icon aria-label="Menu" class="material-icons">event</mat-icon>
+                        <span class="flex-spacer"></span>
+                        Events
+                    </a>
+                    <a mat-tab-link routerLink="community" routerLinkActive>
+                        <mat-icon aria-label="Menu" class="material-icons">groupe</mat-icon>
+                        <span class="flex-spacer"></span>
+                        Community
+                    </a>
+                    <!-- we don't need this to be dynamic yet -->
+                    <!-- <a mat-tab-link *ngFor="let tab of homeMenu" [routerLink]="tab.id" routerLinkActive #rla="routerLinkActive" [active]="rla.active">
+                        <mat-icon aria-label="Menu" class="material-icons">{{tab.icon}}</mat-icon>
+                        <span class="flex-spacer"></span>
+                        {{tab.title}}
+                    </a> -->
+                </nav>
+        
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+        <!-- right panel -->
+        <div class="col-12 col-xl-3">
+            <mat-card class="panel-card panel-card-right" [style.minHeight]="'110%'" [style.minWidth]="'105%'">
+                <mat-card-title>
+                    <div class="panel-events-title">Upcoming events</div>
+                </mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content class="panel-events-content">
+                    <div *ngFor="let event of events">
+                        <!-- title -->
+                        <div class="event-title">
+                            <label>{{event.title}}</label>
+                        </div>
+                        <!-- date -->
+                        <div class="event-date">
+                            <mat-icon class="material-icons">calendar_today</mat-icon>
+                            <span>{{event.date | date : 'EEE, MM d H:mm'}} - {{getEndTime(event) | date : 'H:mm'}}</span>
+                        </div>
+                        <!-- author -->
+                        <div class="event-author">
+                            <span>{{event.author}} @ {{event.location}}</span>
+                        </div>
+                        <hr>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>

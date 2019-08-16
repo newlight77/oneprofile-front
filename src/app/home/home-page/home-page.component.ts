@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Event, UPCOMING_EVENTS } from '../home.model';
 
 @Component({
   selector: 'app-home-page',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  // homeMenu = [
-  //   {id: 'landing', title: 'Welcome to Oneprofile', path: 'home/landing', icon: 'home'},
-  //   {id: 'events', title: 'Events', path: 'home/events', icon: 'event'},
-  //   {id: 'community', title: 'Open Community', path: 'home/community', icon: 'group'},
-  // ];
+  events = UPCOMING_EVENTS;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  getEndTime(event: Event): number {
+    return event.date.getTime() + event.duration * 60000;
+  }
 }
