@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeCommunityPageComponent implements OnInit {
 
+  mdPath = 'assets/contents/home/community.md';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onLoad(event) {
+  }
+
+  onError(event) {
+  }
 }

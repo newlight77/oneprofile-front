@@ -140,19 +140,12 @@ nav {
     z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
 
-nav a {
-    float: top;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .nav-container {
     margin-left: 6px;
     margin-right: 6px;
 }
 
 .content-container {
-    display: flex;
     margin-top: 12px;
     margin-bottom: 12px;
     margin-left: 12px;

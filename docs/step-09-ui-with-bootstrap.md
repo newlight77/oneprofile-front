@@ -390,6 +390,25 @@ div.callout {
     color: rgb(0,0,0,.54);
 }
 
+nav {
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.nav-container {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.content-container {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
 ```
 
 Now we are set.
