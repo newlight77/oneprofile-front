@@ -3,7 +3,7 @@
     <div class="row" fxLayoutAlign="start start">
         <!-- left panel -->
         <div class="col-12 col-xl-3">
-            <mat-card class="panel-card" [style.minHeight]="'110%'" [style.minWidth]="'105%'">
+            <mat-card class="panel-card" [style.minHeight]="'105%'" [style.minWidth]="'105%'">
                 <mat-card-title>
                     <div class="panel-news-title">About</div>
                 </mat-card-title>
@@ -43,13 +43,15 @@
                     </a> -->
                 </nav>
         
-                <router-outlet></router-outlet>
+                <div class="content-container">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
         </div>
 
         <!-- right panel -->
         <div class="col-12 col-xl-3">
-            <mat-card class="panel-card panel-card-right" [style.minHeight]="'110%'" [style.minWidth]="'105%'">
+            <mat-card class="panel-card panel-card-right" [style.minHeight]="'105%'" [style.minWidth]="'105%'">
                 <mat-card-title>
                     <div class="panel-events-title">Upcoming events</div>
                 </mat-card-title>

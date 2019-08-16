@@ -3,7 +3,7 @@
 
         <!-- <app-header></app-header> -->
 
-        <mat-toolbar id="appToolbar" color="primary">
+        <mat-toolbar id="appToolbar" class="mat-elevation-z6" color="primary">
                 <button mat-button routerLink="/">
                     <a style="font-family:cursive;font-size:220%;color:rgb(255, 104, 93);">One</a>
                     <a style="font-family:cursive;font-size:220%;color:rgb(1, 213, 250);">Profile</a>
@@ -19,7 +19,10 @@
                 <button id="button-logout" mat-button *ngIf="isAuthenticated()" (click)="logout()">Logout</button>
         </mat-toolbar>
     
-        <router-outlet></router-outlet>
+        <mat-sidenav-container class="main-sidenav-container" >
+                <router-outlet></router-outlet>
+        </mat-sidenav-container>
+
 
         <!-- <app-footer></app-footer> -->
 
