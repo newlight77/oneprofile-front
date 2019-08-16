@@ -54,8 +54,14 @@ Crafts platform :
   - services
   - repository
 
-
 ## Steps
 
-- [Step 1 : using Jest](docs/step-01-jest.md)
-- [Step 2 : first components](docs/step-02-first-components.md)
+- [Step 1 : Using Jest](docs/step-01-jest.md)
+- [Step 2 : First Components](docs/step-02-first-components.md)
+- [Step 3 : Angular Material](docs/step-02-angular-material.md)
+- [Step 4 : Material Theme](docs/step-02-material-theme.md)
+- [Step 5 : Forms Validation](docs/step-02-forms-validation.md)
+- [Step 6 : Component Testing](docs/step-02-component-testing.md)
+- [Step 7 : Navigation and UI](docs/step-02-navigation-ui.md)
+- [Step 8 : Nvagitation and Routing](docs/step-02-navigation-routing.md)
+- [Step 9 : UI with Bootstrap](docs/step-02-ui-with-bootstrap.md)
