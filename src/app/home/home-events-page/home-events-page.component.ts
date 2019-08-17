@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Event, UPCOMING_EVENTS } from '../home.model';
+
 
 @Component({
   selector: 'app-home-events-page',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeEventsPageComponent implements OnInit {
 
+  events = UPCOMING_EVENTS;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getEndTime(event: Event): number {
+    return event.date.getTime() + event.duration * 60000;
   }
 
 }

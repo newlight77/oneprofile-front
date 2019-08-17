@@ -9,7 +9,7 @@ import { Event } from '../home.model';
 
 const EVENTS: Array<Event> = [
   { date: new Date(2019, 8, 9, 14, 30), duration: 60, location: 'Paris', author: 'Kong To',
-    title: 'Workshop : test'}
+    title: 'Workshop : test', content: ''}
 ];
 
 describe('HomePageComponent', () => {

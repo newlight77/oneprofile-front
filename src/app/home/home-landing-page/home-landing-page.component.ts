@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeLandingPageComponent implements OnInit {
 
+  mdPath = 'assets/contents/home/landing.md';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onLoad(event) {
+  }
+
+  onError(event) {
   }
 
 }
