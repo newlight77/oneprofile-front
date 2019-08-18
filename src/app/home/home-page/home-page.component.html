@@ -1,99 +1,29 @@
-<div class="container">
+<div class="nav-container">
+  <nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link routerLink="landing" routerLinkActive>
+      <mat-icon aria-label="Menu" class="material-icons">home</mat-icon>
+      <span class="flex-spacer"></span>
+      Welcome
+    </a>
+    <a mat-tab-link routerLink="events" routerLinkActive>
+      <mat-icon aria-label="Menu" class="material-icons">event</mat-icon>
+      <span class="flex-spacer"></span>
+      Events
+    </a>
+    <a mat-tab-link routerLink="community" routerLinkActive>
+      <mat-icon aria-label="Menu" class="material-icons">groupe</mat-icon>
+      <span class="flex-spacer"></span>
+      Community
+    </a>
+    <!-- we don't need this to be dynamic yet -->
+    <!-- <a mat-tab-link *ngFor="let tab of homeMenu" [routerLink]="tab.id" routerLinkActive #rla="routerLinkActive" [active]="rla.active">
+                <mat-icon aria-label="Menu" class="material-icons">{{tab.icon}}</mat-icon>
+                <span class="flex-spacer"></span>
+                {{tab.title}}
+            </a> -->
+  </nav>
 
-    <div class="row">
-        <!-- left panel -->
-        <div class="col-12 col-xl-3">
-            <mat-card class="panel-card" [style.minHeight]="'105%'" [style.minWidth]="'105%'">
-                <mat-card-title>
-                    <div class="panel-news-title">About</div>
-                </mat-card-title>
-                <mat-divider></mat-divider>
-                <mat-card-content class="panel-news-content">
-                        <div class="portrait">
-                            <img src="https://s.gravatar.com/avatar/2ab8133286eff8a9fb7cd77876135d2f?s=80" height="50%" width="50%">
-                            <div>
-                                <span><i>by</i><b> Kong To</b></span>
-                            </div>
-                        </div>
-                        <div class="social-media">
-                            <a href="https://twitter.com/newlight77">
-                                <img src="{{icons.twitter.color_base64_24px}}" alt="Kong To @ twitter">
-                            </a>
-                            <a href="https://github.com/newlight77">
-                                <img src="{{icons.github.color_base64_24px}}" alt="Kong To @ github">
-                            </a>
-                            <a href="https://linkedin.com/kongto">
-                                <img src="{{icons.linkedin.color_base64_24px}}" alt="Kong To @ linkedin">
-                            </a>
-                            <a href="newlight77@gmail.com">
-                                <img src="{{icons.email.color_base64_24px}}" alt="Email">
-                            </a>
-                        </div>
-                    <div #newsContainer ></div>
-                </mat-card-content>
-
-            </mat-card>
-        </div>
-
-        <!-- content panel -->
-        <div class="col-12 col-xl-6">
-            <div class="nav-container">
-                <nav mat-tab-nav-bar mat-align-tabs="center">
-                    <a mat-tab-link routerLink="landing" routerLinkActive>
-                        <mat-icon aria-label="Menu" class="material-icons">home</mat-icon>
-                        <span class="flex-spacer"></span>
-                        Welcome
-                    </a>
-                    <a mat-tab-link routerLink="events" routerLinkActive>
-                        <mat-icon aria-label="Menu" class="material-icons">event</mat-icon>
-                        <span class="flex-spacer"></span>
-                        Events
-                    </a>
-                    <a mat-tab-link routerLink="community" routerLinkActive>
-                        <mat-icon aria-label="Menu" class="material-icons">groupe</mat-icon>
-                        <span class="flex-spacer"></span>
-                        Community
-                    </a>
-                    <!-- we don't need this to be dynamic yet -->
-                    <!-- <a mat-tab-link *ngFor="let tab of homeMenu" [routerLink]="tab.id" routerLinkActive #rla="routerLinkActive" [active]="rla.active">
-                        <mat-icon aria-label="Menu" class="material-icons">{{tab.icon}}</mat-icon>
-                        <span class="flex-spacer"></span>
-                        {{tab.title}}
-                    </a> -->
-                </nav>
-        
-                <div class="content-container">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </div>
-
-        <!-- right panel -->
-        <div class="col-12 col-xl-3">
-            <mat-card class="panel-card panel-card-right" [style.minHeight]="'105%'" [style.minWidth]="'105%'">
-                <mat-card-title>
-                    <div class="panel-events-title">Upcoming events</div>
-                </mat-card-title>
-                <mat-divider></mat-divider>
-                <mat-card-content class="panel-events-content">
-                    <div *ngFor="let event of events">
-                        <!-- title -->
-                        <div class="event-title">
-                            <label>{{event.title}}</label>
-                        </div>
-                        <!-- date -->
-                        <div class="event-date">
-                            <mat-icon class="material-icons">calendar_today</mat-icon>
-                            <span>{{event.date | date : 'EEE, MM d H:mm'}} - {{getEndTime(event) | date : 'H:mm'}}</span>
-                        </div>
-                        <!-- author -->
-                        <div class="event-author">
-                            <span>{{event.author}} @ {{event.location}}</span>
-                        </div>
-                        <hr>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-    </div>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

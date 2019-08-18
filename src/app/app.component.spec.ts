@@ -5,6 +5,8 @@ import { MaterialModule } from './shared/material.module';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
+import { LeftPanelComponent} from './core/left-panel/left-panel.component';
+import { RightPanelComponent} from './core/right-panel/right-panel.component';
 
 describe('AppComponent', () => {
 
@@ -17,7 +19,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        NavigationComponent
+        NavigationComponent,
+        LeftPanelComponent,
+        RightPanelComponent
       ],
     }).compileComponents();
   }));

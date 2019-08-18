@@ -3,29 +3,37 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../../shared/material.module';
 
-import { NavigationComponent } from './navigation.component';
-import { LeftPanelComponent} from '../left-panel/left-panel.component';
-import { RightPanelComponent} from '../right-panel/right-panel.component';
+import { LeftPanelComponent } from './left-panel.component';
 
-describe('NavigationComponent', () => {
-  let component: NavigationComponent;
-  let fixture: ComponentFixture<NavigationComponent>;
+describe('LeftPanelComponent', () => {
+  let component: LeftPanelComponent;
+  let fixture: ComponentFixture<LeftPanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule, NoopAnimationsModule, MaterialModule ],
-      declarations: [ NavigationComponent, LeftPanelComponent, RightPanelComponent ]
+      declarations: [ LeftPanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationComponent);
+    fixture = TestBed.createComponent(LeftPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display portrait', () => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+
+    const title = compiled.querySelector('mat-card-content>div.portrait>div');
+    expect(title).toBeTruthy();
+    expect(title.textContent).toEqual('by Kong To');
+
   });
 });

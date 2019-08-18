@@ -1,6 +1,6 @@
-import { Event } from './home.model';
+import { Event } from './events.model';
 
-describe('Home', () => {
+describe('Events', () => {
   it('should create an instance', () => {
     expect(new Event()).toBeTruthy();
   });

@@ -1,29 +1,39 @@
-
 <mat-sidenav-container fullscreen>
 
-        <!-- <app-header></app-header> -->
+  <!-- <app-header></app-header> -->
 
-        <mat-toolbar id="appToolbar" class="mat-elevation-z6" color="primary">
-                <button mat-button routerLink="/">
-                    <a style="font-family:cursive;font-size:220%;color:rgb(255, 104, 93);">One</a>
-                    <a style="font-family:cursive;font-size:220%;color:rgb(1, 213, 250);">Profile</a>
-                </button>
-        
-                <span class="toolbar-filler"></span>
-                <button id="button-guides" mat-button routerLink="guides">Guides</button>
-                <button id="button-kits" mat-button routerLink="kits">Kits</button>
-                <button id="button-lab" mat-button routerLink="lab">Lab</button>
-                <button id="button-blog" mat-button routerLink="blog">Blog</button>
-        
-                <button id="button-login" mat-button *ngIf="!isAuthenticated()" (click)="login()">Login</button>
-                <button id="button-logout" mat-button *ngIf="isAuthenticated()" (click)="logout()">Logout</button>
-        </mat-toolbar>
-    
-        <mat-sidenav-container class="main-sidenav-container" >
-                <router-outlet></router-outlet>
-        </mat-sidenav-container>
+  <mat-toolbar id="appToolbar" class="mat-elevation-z6" color="primary">
+    <button mat-button routerLink="/">
+      <a style="font-family:cursive;font-size:220%;color:rgb(255, 104, 93);">One</a>
+      <a style="font-family:cursive;font-size:220%;color:rgb(1, 213, 250);">Profile</a>
+    </button>
 
+    <span class="toolbar-filler"></span>
+    <button id="button-guides" mat-button routerLink="guides">Guides</button>
+    <button id="button-kits" mat-button routerLink="kits">Kits</button>
+    <button id="button-lab" mat-button routerLink="lab">Lab</button>
+    <button id="button-blog" mat-button routerLink="blog">Blog</button>
 
-        <!-- <app-footer></app-footer> -->
+    <button id="button-login" mat-button *ngIf="!isAuthenticated()" (click)="login()">Login</button>
+    <button id="button-logout" mat-button *ngIf="isAuthenticated()" (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="main-sidenav-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-3">
+          <app-left-panel></app-left-panel>
+        </div>
+        <div class="col-12 col-xl-6">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-12 col-xl-3">
+          <app-right-panel></app-right-panel>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-container>
+
+  <!-- <app-footer></app-footer> -->
 
 </mat-sidenav-container>
