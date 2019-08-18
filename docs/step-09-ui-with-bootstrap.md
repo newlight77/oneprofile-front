@@ -93,7 +93,7 @@ Now we have setup Bootstrap in our project, we can use it. Let's edit the HomePa
         <!-- content panel -->
         <div class="col-12 col-xl-6">
             <div class="nav-container">
-                <nav mat-tab-nav-bar>
+                <nav mat-tab-nav-bar mat-align-tabs="center">
                     <a mat-tab-link routerLink="landing" routerLinkActive>
                         <mat-icon aria-label="Menu" class="material-icons">home</mat-icon>
                         <span class="flex-spacer"></span>

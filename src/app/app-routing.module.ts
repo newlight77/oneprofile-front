@@ -8,6 +8,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'guides', loadChildren: './guides/guides.module#GuidesModule' },
   { path: '404', component: ErrorNotFoundComponent },
   { path: '**', redirectTo: '404' }
 ];

@@ -1,0 +1,34 @@
+
+<div class="nav-container">
+    <nav mat-tab-nav-bar mat-align-tabs="center">
+        <a mat-tab-link routerLink="developer" routerLinkActive>
+            <mat-icon aria-label="Menu" class="material-icons">person</mat-icon>
+            <span class="flex-spacer"></span>
+            Developer
+        </a>
+        <a mat-tab-link routerLink="devops" routerLinkActive>
+            <mat-icon aria-label="Menu" class="material-icons">build</mat-icon>
+            <span class="flex-spacer"></span>
+            DevOps
+        </a>
+        <a mat-tab-link routerLink="gitflow" routerLinkActive>
+            <mat-icon aria-label="Menu" class="material-icons">track_changes</mat-icon>
+            <span class="flex-spacer"></span>
+            Gitflow
+        </a>
+        <a mat-tab-link routerLink="angular" routerLinkActive>
+            <mat-icon aria-label="Menu" class="material-icons">code</mat-icon>
+            <span class="flex-spacer"></span>
+            Angular
+        </a>
+        <a mat-tab-link routerLink="java" routerLinkActive>
+            <mat-icon aria-label="Menu" class="material-icons">code</mat-icon>
+            <span class="flex-spacer"></span>
+            Java
+        </a>
+    </nav>
+
+    <div class="content-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
