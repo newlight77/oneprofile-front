@@ -31,12 +31,14 @@ describe('GuidesPageComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
 
-    const title = compiled.querySelector('div.nav-container>nav');
-    expect(title).toBeTruthy();
-    expect(title.textContent).toContain('Developer');
-    expect(title.textContent).toContain('DevOps');
-    expect(title.textContent).toContain('Gitflow');
-    expect(title.textContent).toContain('Angular');
-    expect(title.textContent).toContain('Java');
+    const primary = compiled.querySelector('div.nav-container>nav.nav-bar-primary');
+    expect(primary).toBeTruthy();
+    expect(primary.textContent).toContain('Developer');
+    expect(primary.textContent).toContain('DevOps');
+    expect(primary.textContent).toContain('Gitflow');
+    const secondary = compiled.querySelector('div.nav-container>nav.nav-bar-secondary');
+    expect(secondary).toBeTruthy();
+    expect(secondary.textContent).toContain('Angular');
+    expect(secondary.textContent).toContain('Java');
   });
 });
