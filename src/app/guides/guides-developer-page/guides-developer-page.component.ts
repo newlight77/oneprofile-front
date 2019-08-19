@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidesDeveloperPageComponent implements OnInit {
 
+  mdPath = 'assets/contents/guides/developer.md';
+
   constructor() { }
 
   ngOnInit() {

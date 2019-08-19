@@ -126,7 +126,7 @@ The resulting work is made available to everyone - the commuon platform, and con
 Now let's edit the CommunityPageComponent html and replace everything by this :
 
 ```html
-<markdown [src]="{{mdPath}}" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+<markdown src="{{mdPath}}" (load)="onLoad($event)" (error)="onError($event)"></markdown>
 ```
 
 We are going to add 2 methods in the class:

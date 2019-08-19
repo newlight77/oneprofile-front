@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidesGitflowPageComponent implements OnInit {
 
+  mdPath = 'assets/contents/guides/gitflow.md';
+
   constructor() { }
 
   ngOnInit() {
