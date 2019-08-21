@@ -15,9 +15,7 @@ export class GuidesMarkdownPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(`markdown page : ${this.route.snapshot.data.markdown}`);
     const markdown = this.route.snapshot.data.markdown;
     this.mdPath = this.mdPathDir + markdown + '.md';
-    console.log(`this.mdPath : ${this.mdPath}`);
   }
 }
