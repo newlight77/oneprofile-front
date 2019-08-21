@@ -1,32 +1,17 @@
 <div class="nav-container">
   <span class="flex-spacer"></span>
   <nav mat-tab-nav-bar mat-align-tabs="center" class='nav-bar-primary'>
-    <a mat-tab-link routerLink="developer" routerLinkActive>
-      <mat-icon aria-label="Menu" class="material-icons">person</mat-icon>
+    <a mat-tab-link *ngFor="let menu of primary" routerLink="{{menu.id}}" routerLinkActive>
+      <mat-icon aria-label="Menu" class="material-icons">{{menu.icon}}</mat-icon>
       <span class="flex-spacer"></span>
-      Developer
-    </a>
-    <a mat-tab-link routerLink="devops" routerLinkActive>
-      <mat-icon aria-label="Menu" class="material-icons">build</mat-icon>
-      <span class="flex-spacer"></span>
-      DevOps
-    </a>
-    <a mat-tab-link routerLink="gitflow" routerLinkActive>
-      <mat-icon aria-label="Menu" class="material-icons">track_changes</mat-icon>
-      <span class="flex-spacer"></span>
-      Gitflow
-    </a>
+      {{menu.title}}
+      </a>
   </nav>
   <nav mat-tab-nav-bar mat-align-tabs="center" class="nav-bar-secondary">
-    <a mat-tab-link routerLink="angular" routerLinkActive>
-      <mat-icon aria-label="Menu" class="material-icons">code</mat-icon>
+    <a mat-tab-link *ngFor="let menu of secondary" routerLink="{{menu.id}}"  routerLinkActive>
+      <mat-icon aria-label="Menu" class="material-icons">{{menu.icon}}</mat-icon>
       <span class="flex-spacer"></span>
-      Angular
-    </a>
-    <a mat-tab-link routerLink="java" routerLinkActive>
-      <mat-icon aria-label="Menu" class="material-icons">code</mat-icon>
-      <span class="flex-spacer"></span>
-      Java
+      {{menu.title}}
     </a>
   </nav>
   <span class="flex-spacer"></span>

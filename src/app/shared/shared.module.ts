@@ -5,7 +5,6 @@ import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     MarkdownModule.forChild()
