@@ -4,7 +4,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule} from '../shared/shared.module';
 import { MaterialModule} from '../shared/material.module';
 import { HomeLandingPageComponent } from './home-landing-page/home-landing-page.component';
-import { HomeCommunityPageComponent } from './home-community-page/home-community-page.component';
 import { HomeEventsPageComponent } from './home-events-page/home-events-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
@@ -13,7 +12,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 @NgModule({
   declarations: [
     HomeLandingPageComponent,
-    HomeCommunityPageComponent,
     HomeEventsPageComponent,
     HomePageComponent],
   imports: [

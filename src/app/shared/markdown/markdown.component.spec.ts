@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarkdownModule, MarkdownService, MarkedOptions } from 'ngx-markdown';
 
-import { GuidesMarkdownPageComponent } from './guides-markdown-page.component';
+import { MarkdownComponent } from './markdown.component';
 
 const ActivatedRouteMock = {
   snapshot: { data: { markdown: 'developer-test' } }
@@ -30,8 +30,8 @@ class RouterMock {
 }
 
 describe('GuidesMarkdownPageComponent', () => {
-  let component: GuidesMarkdownPageComponent;
-  let fixture: ComponentFixture<GuidesMarkdownPageComponent>;
+  let component: MarkdownComponent;
+  let fixture: ComponentFixture<MarkdownComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -39,7 +39,7 @@ describe('GuidesMarkdownPageComponent', () => {
         HttpClientModule,
         MarkdownModule.forRoot({ loader: HttpClient }),
       ],
-      declarations: [ GuidesMarkdownPageComponent ],
+      declarations: [ MarkdownComponent ],
       providers: [
         MarkdownService,
         MarkedOptions,
@@ -53,7 +53,7 @@ describe('GuidesMarkdownPageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuidesMarkdownPageComponent);
+    fixture = TestBed.createComponent(MarkdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
