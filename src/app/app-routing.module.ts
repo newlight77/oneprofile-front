@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'guides', loadChildren: './guides/guides.module#GuidesModule' },
+  { path: 'kits', loadChildren: './kits/kits.module#KitsModule' },
   { path: '404', component: ErrorNotFoundComponent },
   { path: '**', redirectTo: '404' }
 ];
