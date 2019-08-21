@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'guides', loadChildren: './guides/guides.module#GuidesModule' },
   { path: 'kits', loadChildren: './kits/kits.module#KitsModule' },
+  { path: 'dojo', loadChildren: './dojo/dojo.module#DojoModule' },
   { path: '404', component: ErrorNotFoundComponent },
   { path: '**', redirectTo: '404' }
 ];

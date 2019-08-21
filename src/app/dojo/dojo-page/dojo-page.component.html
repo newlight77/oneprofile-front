@@ -1,0 +1,15 @@
+<div class="nav-container">
+  <span class="flex-spacer"></span>
+  <nav mat-tab-nav-bar mat-align-tabs="center" class='nav-bar-primary'>
+    <a mat-tab-link *ngFor="let menu of primary" routerLink="{{menu.id}}" routerLinkActive class='nav-bar-tab-link-primary'>
+      <mat-icon aria-label="Menu" class="material-icons">{{menu.icon}}</mat-icon>
+      <span class="flex-spacer"></span>
+      {{menu.title}}
+    </a>
+  </nav>
+  <span class="flex-spacer"></span>
+
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
