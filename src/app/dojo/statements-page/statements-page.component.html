@@ -1,0 +1,19 @@
+<div class="statement-container" *ngFor="let statement of statements" routerLink="{{statement.markdown}}"
+  routerLinkActive>
+  <span class="flex-spacer"></span>
+
+  <div class="statement-card">
+    <mat-card>
+      <mat-card-header class="statement-card-header">
+        <mat-card-title class="statement-card-title">{{statement.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="statement-card-content">
+          {{statement.sommary}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <span class="flex-spacer"></span>
+</div>
+
+

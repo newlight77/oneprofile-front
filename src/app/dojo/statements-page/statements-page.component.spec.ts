@@ -37,11 +37,10 @@ describe('StatementsPageComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
 
-    const statements = compiled.querySelector('div.statement-container');
+    const statements = compiled.querySelector('div.statement-container>div');
     expect(statements).toBeTruthy();
 
-    expect(statements).toContain('Statement Title');
-    expect(statements).toContain('Statement Summary');
-    expect(statements).toContain('Statement Markdown');
+    expect(statements.textContent).toContain('Statement Title');
+    expect(statements.textContent).toContain('Statement Summary');
   });
 });

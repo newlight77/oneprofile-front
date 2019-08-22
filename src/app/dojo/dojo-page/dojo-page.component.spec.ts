@@ -36,7 +36,6 @@ describe('DojoPageComponent', () => {
     const title = compiled.querySelector('div.nav-container>nav');
     expect(title).toBeTruthy();
     expect(title.textContent).toContain('Coding Dojo');
-    expect(title.textContent).toContain('Topics');
     expect(title.textContent).toContain('Statements');
     expect(title.textContent).toContain('Bootstrap');
   });

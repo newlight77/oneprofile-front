@@ -6,13 +6,17 @@ import { MarkdownModule, MarkdownService, MarkedOptions } from 'ngx-markdown';
 import { MarkdownComponent } from './markdown.component';
 
 const ActivatedRouteMock = {
-  snapshot: { data: { markdown: 'developer-test' } }
+  snapshot: {
+    data: { markdown: 'developer-test' },
+    params: { statement: 'statement-test'}
+  }
 } as unknown as ActivatedRoute;
 
 class ActivatedRouteStub {
   get snapshot() {
     return {
-      data: { markdown: 'developer-test' }
+      data: { markdown: 'developer-test' },
+      params: { statement: 'statement-test'}
     };
   }
 }
@@ -29,7 +33,7 @@ class RouterMock {
   navigate = jasmine.createSpy('navigate');
 }
 
-describe('GuidesMarkdownPageComponent', () => {
+describe('MarkdownComponent', () => {
   let component: MarkdownComponent;
   let fixture: ComponentFixture<MarkdownComponent>;
 
@@ -43,10 +47,10 @@ describe('GuidesMarkdownPageComponent', () => {
       providers: [
         MarkdownService,
         MarkedOptions,
-        { provide: ActivatedRoute, useValue: { snapshot: { data: { markdown: 'developer-test' } } } },
+        // { provide: ActivatedRoute, useValue: { snapshot: { data: { markdown: 'developer-test' } } } },
         // { provide: ActivatedRoute, useClass: ActivatedRouteStub },
         // { provide: ActivatedRoute, useFactory: ActivatedRouteFactory },
-        // { provide: ActivatedRoute, useValue: ActivatedRouteMock },
+        { provide: ActivatedRoute, useValue: ActivatedRouteMock },
       ]
     })
     .compileComponents();
@@ -73,7 +77,9 @@ describe('GuidesMarkdownPageComponent', () => {
   it('should set mdPath from route', () => {
     const activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
     activatedRoute.snapshot.data = { markdown: 'developer-test-mdPath' };
+    activatedRoute.snapshot.params = { statement: 'statement-test' };
     component.ngOnInit();
     expect(component.mdPath).toContain('developer-test-mdPath');
+    expect(component.mdPath).toContain('statement-test');
   });
 });

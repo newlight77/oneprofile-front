@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MarkdownComponent implements OnInit {
 
-  mdPathDir = 'assets/contents/';
+  mdRootDir = 'assets/contents/';
   mdPath = '';
 
   constructor(private route: ActivatedRoute) {
@@ -16,6 +16,10 @@ export class MarkdownComponent implements OnInit {
 
   ngOnInit() {
     const markdown = this.route.snapshot.data.markdown;
-    this.mdPath = this.mdPathDir + markdown + '.md';
+    this.mdPath = this.mdRootDir + markdown;
+    if (this.route.snapshot.params.statement) {
+      this.mdPath = this.mdPath + this.route.snapshot.params.statement;
+    }
+    this.mdPath = this.mdPath + '.md';
   }
 }

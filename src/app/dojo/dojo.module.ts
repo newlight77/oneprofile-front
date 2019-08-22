@@ -5,10 +5,11 @@ import { MaterialModule} from '../shared/material.module';
 
 import { DojoRoutingModule } from './dojo-routing.module';
 import { DojoPageComponent } from './dojo-page/dojo-page.component';
+import { StatementsPageComponent } from './statements-page/statements-page.component';
 
 
 @NgModule({
-  declarations: [DojoPageComponent],
+  declarations: [DojoPageComponent, StatementsPageComponent],
   imports: [
     CommonModule,
     SharedModule,
