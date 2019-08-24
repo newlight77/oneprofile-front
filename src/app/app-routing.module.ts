@@ -11,6 +11,7 @@ export const routes: Routes = [
   { path: 'guides', loadChildren: './guides/guides.module#GuidesModule' },
   { path: 'kits', loadChildren: './kits/kits.module#KitsModule' },
   { path: 'dojo', loadChildren: './dojo/dojo.module#DojoModule' },
+  { path: 'blog', loadChildren: './blog/blog.module#BlogModule' },
   { path: '404', component: ErrorNotFoundComponent },
   { path: '**', redirectTo: '404' }
 ];

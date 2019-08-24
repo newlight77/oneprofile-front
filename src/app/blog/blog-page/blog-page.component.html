@@ -1,0 +1,14 @@
+<div class="nav-container">
+  <nav mat-tab-nav-bar mat-align-tabs="center" class='nav-bar-tabs'>
+    <a mat-tab-link routerLink="search" routerLinkActive class='nav-bar-tab-link-search'>
+      <mat-icon aria-label="Menu" class="material-icons">search</mat-icon>
+      <span class="flex-spacer"></span>
+      Search
+    </a>
+  </nav>
+  <span class="flex-spacer"></span>
+
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
