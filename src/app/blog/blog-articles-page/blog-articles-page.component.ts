@@ -25,22 +25,16 @@ export class BlogArticlesPageComponent implements OnInit {
     }
 
     this.articles = this.articleService.articles();
+    this.tagCounts = this.articleService.tagCounts();
+    this.categoryCounts = this.articleService.categoryCounts();
+  }
 
-    const tags = this.articleService.tags();
-    Object.getOwnPropertyNames(tags).forEach(t => {
-      const tagCount = new TagCount();
-      tagCount.name = t;
-      tagCount.count = tags[t];
-      this.tagCounts.push(tagCount);
-    });
+  filterByTag(tag: string) {
+    this.articles = this.articleService.filterByTag(tag);
+  }
 
-    const categories = this.articleService.categories();
-    Object.getOwnPropertyNames(categories).forEach(c => {
-      const categoryCount = new CategoryCount();
-      categoryCount.name = c;
-      categoryCount.count = categories[c];
-      this.categoryCounts.push(categoryCount);
-    });
+  filterByCategory(category: string) {
+    this.articles = this.articleService.filterByCategory(category);
   }
 
 }

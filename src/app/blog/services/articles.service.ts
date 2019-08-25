@@ -13,7 +13,7 @@ export class ArticlesService {
     return ARTICLES;
   }
 
-  categories(): string {
+  private categories(): string {
     return this.articles()
       // Flattening to an array of tags as tring
       .reduce((acc, a: Article) => [...acc, ...a.categories], [])
@@ -25,7 +25,7 @@ export class ArticlesService {
       }, {});
   }
 
-  tags(): any {
+  private tags(): any {
     return this.articles()
       // Flattening to an array of tags as tring
       .reduce((acc, a: Article) => [...acc, ...a.tags], [])
@@ -37,14 +37,45 @@ export class ArticlesService {
     }, {});
   }
 
+  tagCounts(): Array<TagCount> {
+    const tagCounts = [];
+    const tags = this.tags();
+    Object.getOwnPropertyNames(tags).forEach(t => {
+      tagCounts.push(new TagCount(t, tags[t]));
+    });
+    return tagCounts;
+  }
 
-    // Flattening an array of arrays
-    // ARTICLES.reduce( (acc, a) => {
-    //   let tags = new Array<string>();
-    //   a.tags.forEach(t => {
-    //     tags.push(t);
-    //   });
-    //   return tags;
-    // }, []);
+  categoryCounts(): Array<CategoryCount> {
+    const categoryCounts = [];
+    const categories = this.categories();
+    Object.getOwnPropertyNames(categories).forEach(c => {
+      categoryCounts.push(new CategoryCount(c, categories[c]));
+    });
+    return categoryCounts;
+  }
+
+
+  filterByTag(tag: string): Array<Article> {
+    return this.articles().filter(a => {
+      return this.contains(a.tags, tag);
+    });
+  }
+
+  filterByCategory(category: string): Array<Article> {
+    return this.articles().filter(a => {
+      return this.contains(a.categories, category);
+    });
+  }
+
+  private contains(list: Array<string>, item: string) {
+    let filtered = false;
+    list.forEach(element => {
+      if (element.trim() === item) {
+        filtered = true;
+      }
+    });
+    return filtered;
+  }
 
 }

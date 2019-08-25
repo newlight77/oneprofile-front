@@ -2,7 +2,7 @@
   <div class="col-12 col-xl-6">
     <div class="articles-tags">
       <div class="articles-row-title">Tags</div>
-      <div class="tag-container" *ngFor="let tag of tagCounts" routerLink="{{tag}}" routerLinkActive>
+      <div class="tag-container" *ngFor="let tag of tagCounts" (click)="filterByTag(tag.name)">
         <div class="row">
           <div class="col-12 col-xl-9">{{tag.name}}</div>
           <div class="col-12 col-xl-3">{{tag.count}}</div>
@@ -13,8 +13,7 @@
   <div class="col-12 col-xl-6">
     <div class="articles-categories">
       <div class="articles-row-title">Categories</div>
-      <div class="category-container" *ngFor="let category of categoryCounts" routerLink="{{category}}"
-        routerLinkActive>
+      <div class="category-container" *ngFor="let category of categoryCounts" (click)="filterByCategory(category.name)">
         <div class="row">
           <div class="col-12 col-xl-9">{{category.name}}</div>
           <div class="col-12 col-xl-3">{{category.count}}</div>

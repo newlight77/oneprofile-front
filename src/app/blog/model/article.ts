@@ -11,12 +11,22 @@ export type ListType = 'default' | 'categories' | 'tags' | 'author';
 
 export class TagCount {
     name: string;
-    count: string;
+    count: number;
+
+    constructor(name: string, count: number) {
+        this.name = name;
+        this.count = count;
+    }
 }
 
 export class CategoryCount {
     name: string;
-    count: string;
+    count: number;
+
+    constructor(name: string, count: number) {
+        this.name = name;
+        this.count = count;
+    }
 }
 
 export const ARTICLES: Array<Article> = [

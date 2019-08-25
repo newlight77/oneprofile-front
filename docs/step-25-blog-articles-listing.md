@@ -367,4 +367,4 @@ This part is a bit too long to achieve, so we stop here and leave the rest for l
 
 - display an article when we click on an article item from the list.
 
-- search by a keyword to list of articles: with a search criteria, only articles containing that keyword is displayed.
+- filter by a keyword the list of articles: with a keyword, only articles containing that keyword is displayed.

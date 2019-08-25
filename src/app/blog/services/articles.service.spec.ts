@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ArticlesService } from './articles.service';
-import { Article, ListType } from '../model/article';
+import { Article } from '../model/article';
 
 
 describe('ArticlesService', () => {
@@ -25,23 +25,55 @@ describe('ArticlesService', () => {
   it('should list all distinct tags', () => {
     const service: ArticlesService = TestBed.get(ArticlesService);
     spyOn(service, 'articles').and.returnValue(ARTICLES);
-    const tags = service.tags();
+    const tags = service.tagCounts().sort();
 
-    expect(tags['test']).toEqual(3);
-    expect(tags['kata']).toEqual(3);
-    expect(tags['clean code']).toEqual(1);
-    expect(tags['solid']).toEqual(1);
-    expect(tags['principles']).toEqual(1);
-    expect(tags['kiss']).toEqual(1);
+    expect(tags.length).toEqual(7);
+    expect(tags[0].name).toEqual('test');
+    expect(tags[0].count).toEqual(3);
+    expect(tags[1].name).toEqual('kata');
+    expect(tags[1].count).toEqual(3);
+    expect(tags[2].name).toEqual('crafts');
+    expect(tags[2].count).toEqual(3);
+    expect(tags[3].name).toEqual('solid');
+    expect(tags[3].count).toEqual(1);
+    expect(tags[4].name).toEqual('clean code');
+    expect(tags[4].count).toEqual(1);
+    expect(tags[5].name).toEqual('principles');
+    expect(tags[5].count).toEqual(1);
+    expect(tags[6].name).toEqual('kiss');
+    expect(tags[6].count).toEqual(1);
   });
 
   it('should list all distinct categories', () => {
     const service: ArticlesService = TestBed.get(ArticlesService);
     spyOn(service, 'articles').and.returnValue(ARTICLES);
-    const categories = service.categories();
+    const categories = service.categoryCounts().sort();
 
-    expect(categories['crafts']).toEqual(3);
-    expect(categories['testing']).toEqual(1);
-    expect(categories['agile']).toEqual(1);
+    expect(categories.length).toEqual(3);
+    expect(categories[0].name).toEqual('crafts');
+    expect(categories[0].count).toEqual(3);
+    expect(categories[1].name).toEqual('testing');
+    expect(categories[1].count).toEqual(1);
+    expect(categories[2].name).toEqual('agile');
+    expect(categories[2].count).toEqual(1);
   });
+
+  it('should filter tags', () => {
+    const service: ArticlesService = TestBed.get(ArticlesService);
+    spyOn(service, 'articles').and.returnValue(ARTICLES);
+    const articles = service.filterByTag('kiss');
+
+    expect(articles.length).toEqual(1);
+    expect(articles[0].tags[4].trim()).toEqual('kiss');
+  });
+
+  it('should filter categories', () => {
+    const service: ArticlesService = TestBed.get(ArticlesService);
+    spyOn(service, 'articles').and.returnValue(ARTICLES);
+    const articles = service.filterByCategory('agile');
+
+    expect(articles.length).toEqual(1);
+    expect(articles[0].categories[1].trim()).toEqual('agile');
+  });
+
 });

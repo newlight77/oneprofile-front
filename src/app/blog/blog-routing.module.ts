@@ -8,12 +8,9 @@ import { MarkdownComponent } from '../shared/markdown/markdown.component';
 export const routes: Routes = [
   { path: '', component: BlogPageComponent,
     children: [
-      { path: '', redirectTo: 'blog', pathMatch: 'full' },
-      { path: 'blog', component: BlogArticlesPageComponent },
-      { path: 'categories/:catogory', component: BlogArticlesPageComponent},
-      { path: 'tags/:tag', component: BlogArticlesPageComponent },
+      { path: '', component: BlogArticlesPageComponent },
       { path: 'search/:searchKeyWord', component: BlogArticlesPageComponent },
-      { path: 'articles/:article', component: MarkdownComponent, data: { markdown: 'blog/articles/' } },
+      { path: 'articles/:article', component: MarkdownComponent, data: { markdown: 'blog/articles/' } }
     ]
   }
 ];
