@@ -4,20 +4,20 @@
 }
 
 nav {
-    position: sticky;
-    position: -webkit-sticky; /* For macOS/iOS Safari */
-    top: 0; /* Sets the sticky toolbar to be on top */
-    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    // position: sticky;
+    // position: -webkit-sticky; /* For macOS/iOS Safari */
+    // top: 0; /* Sets the sticky toolbar to be on top */
+    // z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
 
-.nav-container {
-    margin-left: 6px;
-    margin-right: -6px;
-}
+// .nav-container {
+//     margin-left: 6px;
+//     margin-right: -6px;
+// }
 
-.content-container {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    margin-left: 12px;
-    margin-right: 12px;
-}
+// .content-container {
+//     margin-left: 12px;
+//     margin-right: 12px;
+// }
