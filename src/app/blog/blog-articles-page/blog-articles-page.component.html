@@ -33,31 +33,16 @@
   </div>
 </div>
 
-
-<!-- <table mat-table [dataSource]="tagCounts">
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> TAGS </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-    
-    <ng-container matColumnDef="count">
-        <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let element"> {{element.count}} </td>
-    </ng-container>
-    
-    <tr mat-header-row *matHeaderRowDef="['name', 'count']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['name', 'count'];"></tr>
-</table> -->
-
 <hr>
 
-<div class="article-container" *ngFor="let article of articles" routerLink="{{article.markdown}}" routerLinkActive>
+<div class="article-container" *ngFor="let article of articles" routerLink="articles/{{article.markdown}}" routerLinkActive>
   <span class="flex-spacer"></span>
 
   <div class="article-card">
     <mat-card>
       <mat-card-header class="article-card-header">
         <mat-card-title class="article-card-title">{{article.title}}</mat-card-title>
+        <mat-card-subtitle class="article-card-title"><b>Tags</b> : {{article.tags}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content class="article-card-content">
         {{article.sommary}}

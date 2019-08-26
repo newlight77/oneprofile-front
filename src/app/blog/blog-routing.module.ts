@@ -10,7 +10,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: BlogArticlesPageComponent },
       { path: 'search/:searchKeyWord', component: BlogArticlesPageComponent },
-      { path: 'articles/:article', component: MarkdownComponent, data: { markdown: 'blog/articles/' } }
+      { path: 'articles/:statement', component: MarkdownComponent, data: { markdown: 'blog/articles/' } }
     ]
   }
 ];

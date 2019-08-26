@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Article, ListType, ARTICLES, TagCount, CategoryCount } from '../model/article';
+import { Article, ARTICLES, TagCount, CategoryCount } from '../model/article';
 
 @Injectable({
   providedIn: 'root'
@@ -72,7 +72,7 @@ export class ArticlesService {
     return this.articles().filter(a => {
        return a.title.toLowerCase().includes(keyword.toLowerCase())
        || a.author.toLowerCase().includes(keyword.toLowerCase())
-       || a.content.toLowerCase().includes(keyword.toLowerCase())
+       || a.sommary.toLowerCase().includes(keyword.toLowerCase())
        || a.tags.toString().toLowerCase().includes(keyword.toLowerCase())
        || a.categories.toString().toLowerCase().includes(keyword.toLowerCase())
        ;

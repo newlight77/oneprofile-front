@@ -8,11 +8,11 @@ describe('ArticlesService', () => {
 
   const ARTICLES: Array<Article> = [
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata1' },
+    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata1', markdown: '' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata2' },
+    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata2', markdown: '' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata3 keyword' },
+    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata3 keyword', markdown: '' },
   ];
 
   beforeEach(() => TestBed.configureTestingModule({}));
@@ -94,13 +94,13 @@ describe('ArticlesService', () => {
     expect(articles[0].tags[4]).toContain('kiss');
   });
 
-  it('should filter by keyword present in content', () => {
+  it('should filter by keyword present in sommary', () => {
     const service: ArticlesService = TestBed.get(ArticlesService);
     spyOn(service, 'articles').and.returnValue(ARTICLES);
     const articles = service.filterBySearchKeyword('keyw');
 
     expect(articles.length).toEqual(1);
-    expect(articles[0].content).toContain('keyword');
+    expect(articles[0].sommary).toContain('keyword');
   });
 
 });

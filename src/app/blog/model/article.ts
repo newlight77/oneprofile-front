@@ -4,10 +4,9 @@ export class Article {
     author = '';
     categories = new Array();
     tags = new Array();
-    content = '';
+    sommary = '';
+    markdown = '';
 }
-
-export type ListType = 'default' | 'categories' | 'tags' | 'author';
 
 export class TagCount {
     name: string;
@@ -31,13 +30,13 @@ export class CategoryCount {
 
 export const ARTICLES: Array<Article> = [
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: '2018-08-27-design-patterns', title: 'Design patterns by example', categories: 'design patterns'.split(','), tags: 'java, spring, design patterns'.split(','), author: 'Kong To', sommary: 'Design patterns are considered as good practices as they are generic, repeatable and re-usable solutions in software design. They aims to describe how problems could be solved in a commonly known pattern so it will easy the understanding.', markdown: '2018-08-27-design-patterns'  },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: '2018-08-28-RESTful-web-services', title: 'RESTful web services explained', categories: 'architecture, java'.split(','), tags: 'jest, spring, unit test, rest'.split(','), author: 'Kong To', sommary: 'Nowadways, most of backend services provides REST APIs for client such as frontend applications to consume. Therefore, it is very important to understand what it defines and how to implement RESTful web services or to consume them properly and more effiently.', markdown: '2018-08-28-RESTful-web-services'  },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: '2018-08-29-RESTful-json-patch-by-example', title: 'RESTful json-patch by example', categories: 'architecture, java'.split(','), tags: 'spring, java, rest'.split(','), author: 'Kong To', sommary: 'JSON Patch is a format for describing changes to a JSON document. It can be used to avoid sending a whole document when only a part has changed.', markdown: '2018-08-29-RESTful-json-patch-by-example'  },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata4', title: 'Coding Dojo & Kata4', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, stupid, linux, solid'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: '2018-09-06-springboot-test-disable-security', title: 'How to test endpoints with Springboot by disabling security', categories: 'java, security'.split(','), tags: 'java, spring security, unit test, annotation, aspect'.split(','), author: 'Kong To', sommary: 'This article aims to show how to write tests when using springboot with security embedded.', markdown: '2018-09-06-springboot-test-disable-security' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata5', title: 'Coding Dojo & Kata5', categories: 'crafts, testing, agile'.split(','), tags: 'test, kata, crafts, tools, agile'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: '2018-09-08-linux-shortcuts-keys', title: 'Linux shell shortcuts', categories: 'server'.split(','), tags: 'shell, linux, shortcuts'.split(','), author: 'Kong To', sommary: 'The shortcuts below may be of use, and they are quite useful to me.', markdown: '2018-09-08-linux-shortcuts-keys' },
 ];

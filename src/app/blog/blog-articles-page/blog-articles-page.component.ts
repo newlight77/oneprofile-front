@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Article, ListType, TagCount, CategoryCount} from '../model/article';
+import { Article, TagCount, CategoryCount} from '../model/article';
 import { ArticlesService } from '../services/articles.service';
 
 @Component({
@@ -11,7 +11,6 @@ import { ArticlesService } from '../services/articles.service';
 })
 export class BlogArticlesPageComponent implements OnInit {
 
-  listType: ListType = 'default';
   tagCounts = [];
   categoryCounts = [];
   articles: Array<Article> = [];
@@ -19,11 +18,6 @@ export class BlogArticlesPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private articleService: ArticlesService) { }
 
   ngOnInit() {
-    this.listType = this.route.snapshot.data.listType;
-    if (this.route.snapshot.data.listType) {
-      this.listType = this.route.snapshot.data.listType;
-    }
-
     this.articles = this.articleService.articles();
     this.tagCounts = this.articleService.tagCounts();
     this.categoryCounts = this.articleService.categoryCounts();
