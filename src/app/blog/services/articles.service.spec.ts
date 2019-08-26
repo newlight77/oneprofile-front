@@ -8,11 +8,11 @@ describe('ArticlesService', () => {
 
   const ARTICLES: Array<Article> = [
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata1' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata2' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata' },
+    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', content: '## Coding Dojo & Kata3 keyword' },
   ];
 
   beforeEach(() => TestBed.configureTestingModule({}));
@@ -74,6 +74,33 @@ describe('ArticlesService', () => {
 
     expect(articles.length).toEqual(1);
     expect(articles[0].categories[1].trim()).toEqual('agile');
+  });
+
+  it('should filter by keyword present in title', () => {
+    const service: ArticlesService = TestBed.get(ArticlesService);
+    spyOn(service, 'articles').and.returnValue(ARTICLES);
+    const articles = service.filterBySearchKeyword('Kata3');
+
+    expect(articles.length).toEqual(1);
+    expect(articles[0].title.trim()).toContain('Kata3');
+  });
+
+  it('should filter by keyword present in tags', () => {
+    const service: ArticlesService = TestBed.get(ArticlesService);
+    spyOn(service, 'articles').and.returnValue(ARTICLES);
+    const articles = service.filterBySearchKeyword('kis');
+
+    expect(articles.length).toEqual(1);
+    expect(articles[0].tags[4]).toContain('kiss');
+  });
+
+  it('should filter by keyword present in content', () => {
+    const service: ArticlesService = TestBed.get(ArticlesService);
+    spyOn(service, 'articles').and.returnValue(ARTICLES);
+    const articles = service.filterBySearchKeyword('keyw');
+
+    expect(articles.length).toEqual(1);
+    expect(articles[0].content).toContain('keyword');
   });
 
 });

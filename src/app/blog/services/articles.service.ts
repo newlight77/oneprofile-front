@@ -68,6 +68,17 @@ export class ArticlesService {
     });
   }
 
+  filterBySearchKeyword(keyword: string): Array<Article> {
+    return this.articles().filter(a => {
+       return a.title.toLowerCase().includes(keyword.toLowerCase())
+       || a.author.toLowerCase().includes(keyword.toLowerCase())
+       || a.content.toLowerCase().includes(keyword.toLowerCase())
+       || a.tags.toString().toLowerCase().includes(keyword.toLowerCase())
+       || a.categories.toString().toLowerCase().includes(keyword.toLowerCase())
+       ;
+    });
+  }
+
   private contains(list: Array<string>, item: string) {
     let filtered = false;
     list.forEach(element => {

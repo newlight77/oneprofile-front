@@ -37,4 +37,7 @@ export class BlogArticlesPageComponent implements OnInit {
     this.articles = this.articleService.filterByCategory(category);
   }
 
+  filterBySearchKeyword = (keyword: string) => {
+    this.articles = this.articleService.filterBySearchKeyword(keyword);
+  }
 }

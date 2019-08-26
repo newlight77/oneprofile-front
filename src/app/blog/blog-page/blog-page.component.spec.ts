@@ -27,12 +27,4 @@ describe('BlogPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display tab menus', () => {
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-
-    const title = compiled.querySelector('div.nav-container>nav');
-    expect(title).toBeTruthy();
-    expect(title.textContent).toContain('Search');
-  });
 });
