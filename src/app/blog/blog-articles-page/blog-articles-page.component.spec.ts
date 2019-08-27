@@ -34,11 +34,11 @@ describe('BlogArticlesPageComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
 
-    const tagTitle = compiled.querySelector('div.articles-tags>div.articles-row-title');
+    const tagTitle = compiled.querySelector('div.articles-tags');
     expect(tagTitle).toBeTruthy();
     expect(tagTitle.textContent).toContain('Tags');
 
-    const cateogryTitle = compiled.querySelector('div.articles-categories>div.articles-row-title');
+    const cateogryTitle = compiled.querySelector('div.articles-categories');
     expect(cateogryTitle).toBeTruthy();
     expect(cateogryTitle.textContent).toContain('Categories');
   });

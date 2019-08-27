@@ -1,33 +1,29 @@
 <nav mat-tab-nav-bar mat-align-tabs="center" class='nav-bar-tabs'>
-  <div >
+  <div>
     <mat-form-field class="nav-bar-filter">
       <input matInput type="text" (keyup)="filterBySearchKeyword($event.target.value)" placeholder="Filter">
     </mat-form-field>
   </div>
 </nav>
 
-<span class="flex-spacer"></span>
-
-<div class="row">
-  <div class="col-12 col-xl-6">
-    <div class="articles-tags">
-      <div class="articles-row-title">Tags</div>
-      <div class="tag-container" *ngFor="let tag of tagCounts" (click)="filterByTag(tag.name)">
-        <div class="row">
-          <div class="col-12 col-xl-9">{{tag.name}}</div>
-          <div class="col-12 col-xl-3">{{tag.count}}</div>
-        </div>
+<div class="articles-tags articles-header">
+  <div class="articles-title">Tags</div>
+  <div class="articles-header-content">
+    <div *ngFor="let tag of tagCounts" (click)="filterByTag(tag.name)">
+      <div class="row">
+        <div class="col-12 col-xl-9">{{tag.name}}</div>
+        <div class="col-12 col-xl-3">{{tag.count}}</div>
       </div>
     </div>
   </div>
-  <div class="col-12 col-xl-6">
-    <div class="articles-categories">
-      <div class="articles-row-title">Categories</div>
-      <div class="category-container" *ngFor="let category of categoryCounts" (click)="filterByCategory(category.name)">
-        <div class="row">
-          <div class="col-12 col-xl-9">{{category.name}}</div>
-          <div class="col-12 col-xl-3">{{category.count}}</div>
-        </div>
+</div>
+<div class="articles-categories articles-header">
+  <div class="articles-title">Categories</div>
+  <div class="articles-header-content">
+    <div *ngFor="let category of categoryCounts" (click)="filterByCategory(category.name)">
+      <div class="row">
+        <div class="col-12 col-xl-9">{{category.name}}</div>
+        <div class="col-12 col-xl-3">{{category.count}}</div>
       </div>
     </div>
   </div>
@@ -35,7 +31,8 @@
 
 <hr>
 
-<div class="article-container" *ngFor="let article of articles" routerLink="articles/{{article.mdFilename}}" routerLinkActive>
+<div class="article-container" *ngFor="let article of articles" routerLink="articles/{{article.mdFilename}}"
+  routerLinkActive>
   <span class="flex-spacer"></span>
 
   <div class="article-card">

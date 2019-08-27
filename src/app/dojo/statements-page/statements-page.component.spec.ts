@@ -31,7 +31,7 @@ describe('StatementsPageComponent', () => {
     component.statements = [
       { title: 'Statement Title',
         sommary: 'Statement Summary',
-        markdown: 'Statement Markdown' },
+        mdFilename: 'mdFile' },
     ];
 
     fixture.detectChanges();
