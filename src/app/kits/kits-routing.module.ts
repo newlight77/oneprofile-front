@@ -7,11 +7,11 @@ export const routes: Routes = [
   { path: '', component: KitsPageComponent,
     children: [
       { path: '', redirectTo: 'developer', pathMatch: 'full' },
-      { path: 'developer', component: MarkdownComponent, data: { markdown: 'kits/developer' } },
-      { path: 'ci', component: MarkdownComponent, data: { markdown: 'kits/ci' } },
-      { path: 'cd', component: MarkdownComponent, data: { markdown: 'kits/cd' } },
-      { path: 'java', component: MarkdownComponent, data: { markdown: 'kits/java' } },
-      { path: 'angular', component: MarkdownComponent, data: { markdown: 'kits/angular' } },
+      { path: 'developer', component: MarkdownComponent, data: { mdSubDir: 'kits/', mdFilename: 'developer' } },
+      { path: 'ci', component: MarkdownComponent, data: { mdSubDir: 'kits/', mdFilename: 'cd' } },
+      { path: 'cd', component: MarkdownComponent, data: { mdSubDir: 'kits/', mdFilename: 'cd' } },
+      { path: 'java', component: MarkdownComponent, data: { mdSubDir: 'kits/', mdFilename: 'java' } },
+      { path: 'angular', component: MarkdownComponent, data: { mdSubDir: 'kits/', mdFilename: 'angular' } },
     ]
   }
 ];

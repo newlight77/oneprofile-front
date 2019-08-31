@@ -4,7 +4,6 @@ class Menu {
   id = '';
   title = '';
   icon = '';
-  mdParth = '';
 }
 
 @Component({
@@ -15,14 +14,14 @@ class Menu {
 export class KitsPageComponent implements OnInit {
 
   primary: Array<Menu> = [
-    { id: 'developer', title: 'Developer', icon: 'build', mdParth: 'assets/contents/kits/developer.md' },
-    { id: 'ci', title: 'CI', icon: 'build', mdParth: 'assets/contents/kits/ci.md' },
-    { id: 'cd', title: 'CD', icon: 'build', mdParth: 'assets/contents/kits/cd.md' },
+    { id: 'developer', title: 'Developer', icon: 'build' },
+    { id: 'ci', title: 'CI', icon: 'build' },
+    { id: 'cd', title: 'CD', icon: 'build' },
   ];
 
   secondary: Array<Menu> = [
-    { id: 'angular', title: 'Angular', icon: 'code', mdParth: 'assets/contents/kits/angular.md' },
-    { id: 'java', title: 'Java', icon: 'code', mdParth: 'assets/contents/kits/java.md' },
+    { id: 'angular', title: 'Angular', icon: 'code' },
+    { id: 'java', title: 'Java', icon: 'code' },
   ];
 
   constructor() { }

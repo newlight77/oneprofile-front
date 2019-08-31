@@ -76,8 +76,8 @@ describe('MarkdownComponent', () => {
 
   it('should set mdPath from route', () => {
     const activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
-    activatedRoute.snapshot.data = { markdown: 'developer-test-mdPath' };
-    activatedRoute.snapshot.params = { statement: 'statement-test' };
+    activatedRoute.snapshot.data = { mdSubDir: 'developer-test-mdPath' };
+    activatedRoute.snapshot.params = { mdFilename: 'statement-test' };
     component.ngOnInit();
     expect(component.mdPath).toContain('developer-test-mdPath');
     expect(component.mdPath).toContain('statement-test');

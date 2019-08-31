@@ -12,7 +12,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'landing', pathMatch: 'full' },
       { path: 'landing', component: HomeLandingPageComponent, pathMatch: 'full' },
-      { path: 'community', component: MarkdownComponent, pathMatch: 'full', data: {markdown: 'home/community'} },
+      { path: 'community', component: MarkdownComponent, pathMatch: 'full', data: { mdSubDir: 'home/', mdFilename: 'community' } },
       { path: 'events', component: HomeEventsPageComponent, pathMatch: 'full' },
       { path: '**', redirectTo: 'landing' }
     ]

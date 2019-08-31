@@ -9,10 +9,10 @@ export const routes: Routes = [
   { path: '', component: DojoPageComponent,
     children: [
       { path: '', redirectTo: 'guide', pathMatch: 'full' },
-      { path: 'dojo', component: MarkdownComponent, data: { markdown: 'dojo/dojo' } },
-      { path: 'statements', component: StatementsPageComponent, data: { markdown: 'dojo/statements' } },
-      { path: 'statements/:statement', component: MarkdownComponent, data: { markdown: 'dojo/statements/' } },
-      { path: 'bootstraps', component: MarkdownComponent, data: { markdown: 'dojo/bootstraps' } },
+      { path: 'dojo', component: MarkdownComponent, data: { mdSubDir: 'dojo/', mdFilename: 'dojo' } },
+      { path: 'statements', component: StatementsPageComponent, data: { mdSubDir: 'dojo/', mdFilename: 'statements' } },
+      { path: 'statements/:mdFilename', component: MarkdownComponent, data: { mdSubDir: 'dojo/statements/' } },
+      { path: 'bootstraps', component: MarkdownComponent, data: { mdSubDir: 'dojo/', mdFilename: 'bootstraps' } },
     ]
   }
 ];

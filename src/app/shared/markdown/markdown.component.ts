@@ -15,10 +15,13 @@ export class MarkdownComponent implements OnInit {
   }
 
   ngOnInit() {
-    const markdown = this.route.snapshot.data.markdown;
-    this.mdPath = this.mdRootDir + markdown;
-    if (this.route.snapshot.params.statement) {
-      this.mdPath = this.mdPath + this.route.snapshot.params.statement;
+    if (this.route.snapshot.data.mdSubDir) {
+      this.mdPath = this.mdRootDir + this.route.snapshot.data.mdSubDir;
+    }
+    if (this.route.snapshot.data.mdFilename) {
+      this.mdPath = this.mdPath + this.route.snapshot.data.mdFilename;
+    } else if (this.route.snapshot.params.mdFilename) {
+      this.mdPath = this.mdPath + this.route.snapshot.params.mdFilename;
     }
     this.mdPath = this.mdPath + '.md';
   }

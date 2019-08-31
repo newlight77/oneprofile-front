@@ -8,11 +8,11 @@ describe('ArticlesService', () => {
 
   const ARTICLES: Array<Article> = [
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata1', markdown: '' },
+    { id: 'dojo-kata1', title: 'Coding Dojo & Kata1', categories: 'crafts, testing'.split(','), tags: 'test, kata, crafts, solid'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata1', mdFilename: '' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata2', markdown: '' },
+    { id: 'dojo-kata2', title: 'Coding Dojo & Kata2', categories: 'crafts, agile'.split(','), tags: 'test, kata, crafts, clean code'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata2', mdFilename: '' },
     // tslint:disable-next-line:max-line-length
-    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata3 keyword', markdown: '' },
+    { id: 'dojo-kata3', title: 'Coding Dojo & Kata3', categories: 'crafts'.split(','), tags: 'test, kata, crafts, principles, kiss'.split(','), author: 'Kong To', sommary: '## Coding Dojo & Kata3 keyword', mdFilename: '' },
   ];
 
   beforeEach(() => TestBed.configureTestingModule({}));
