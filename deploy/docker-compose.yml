@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+    front:
+      image: nginx:alpine
+      hostname: portal
+      ports:
+        - "80:80"
+      volumes:
+        - ../dist/oneprofile-front:/var/www/oneprofile-front
+        - ./config/nginx.kongto.ca.conf:/etc/nginx/conf.d/nginx.conf
+      working_dir: "/demo"
