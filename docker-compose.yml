@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  front:
+    image: nginx:alpine
+    hostname: front
+    ports:
+    - "8000:81"
+    volumes:
+    - ./dist/oneprofile-front:/usr/share/nginx/html
+    working_dir: "/front"
